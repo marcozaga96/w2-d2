@@ -17,7 +17,12 @@ public class RubricaTelefonica {
     }
 
     public String cercaPersonaPerNumero(String numero) {
-        return contatti.get(numero);
+        for (Map.Entry<String, String> number : contatti.entrySet()) {
+            if (number.getValue().equals(numero)) {
+                return "Nome: " + number.getKey() + " Telefono: " + numero;
+            }
+        }
+        return null;
     }
 
     public void stampaContatti() {
